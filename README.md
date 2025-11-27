@@ -66,3 +66,23 @@ and use the regular IDE for manual changes, build and debugging, while running t
 
 This latter setup worked the best for me since it allows for doing planning in parallel to testing/debugging easily,
 since they don't involve changing any code.
+
+## Serving MCP over HTTP transport
+
+MCP can be served over HTTP transport, which allows for connecting to it from coding agents running on another machine or server.
+
+The preparation script will create a `HttpServer.bat` batch file, you can use to run the MCP Server over HTTP.
+Connect to `127.0.0.1:8000` with your coding agent (MCP client). 
+
+Test: http://127.0.0.1:8000/sse/ - It should say `event: endpoint`
+
+_SSE: Server-Sent Events is a technology that allows a server to send automatic updates to a client over an HTTP connection._
+
+If you want to connect an external host or server (like GitHub Copilot) to this MCP server, then you have to
+forward `127.0.0.1:8000` to a publicly visible endpoint, ideally in a way which wraps it as HTTPS (reverse proxy).
+
+Your publicly visible hostname (or domain) needs to be whitelisted in the GitHub Copilot settings for this to work.
+
+- TODO: Forwarding HOWTO: SSH port forwarding, reverse proxy setup, open port on router, etc.
+- TODO: Authentication with a secret URL path. 
+- TODO: Authentication with a Bearer token.
