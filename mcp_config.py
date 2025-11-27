@@ -22,7 +22,12 @@ with open(fastmcp_config_path, 'rt') as f:
     fastmcp_config = json.load(f)
 
 fastmcp_config['name'] = 'Space Engineers Code Index'
-fastmcp_config['description'] = 'Index of the decompiled Space Engineers code. It includes both the CSharp code and ILCode. Use the ILCode only for transpiler patches and pre-patches.'
+fastmcp_config['description'] = (
+    "Index of the decompiled Space Engineers code. " +
+    "It includes CSharp code (*.cs), the corresponding ILCode (*.il) and " +
+    "any textual content in the game's Content folder (*.gsc, *.hlsi, *.json, *.mwl, *.resx, *.sbc, *.sbl, *.scf, *.vs, *.vsc, *.xml). " +
+    "Use the ILCode only for transpiler patches and pre-patches."
+)
 
 with open(fastmcp_config_path, 'wt') as f:
     json.dump(fastmcp_config, f, indent=4)
