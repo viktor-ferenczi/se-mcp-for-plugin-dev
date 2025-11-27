@@ -31,3 +31,11 @@ fastmcp_config['description'] = (
 
 with open(fastmcp_config_path, 'wt') as f:
     json.dump(fastmcp_config, f, indent=4)
+
+with open('HttpServer.bat', 'wt') as f:
+    f.write(f'''\
+@echo off
+cd code-index-mcp
+call .venv\\Scripts\\activate.bat
+python -u -OO run.py --transport sse --project-path "{CODE_DIR}"     
+''')
