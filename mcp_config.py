@@ -45,10 +45,11 @@ with open(fastmcp_config_path, 'rt') as f:
 
 fastmcp_config['name'] = 'Space Engineers Code Index'
 fastmcp_config['description'] = (
-        "Index of the decompiled Space Engineers code. " +
-        "It includes CSharp code (*.cs), the corresponding ILCode (*.il) and " +
-        "any textual content in the game's Content folder (*.gsc, *.hlsi, *.json, *.mwl, *.resx, *.sbc, *.sbl, *.scf, *.vs, *.vsc, *.xml). " +
-        "Use the ILCode only for transpiler patches and pre-patches."
+        "Use this tool to search and read the source code of the Space Engineers game. " +
+        "This tool provides access to the decompiled CSharp code (*.cs) and the corresponding ILCode (*.il), " +
+        "in addition to some structured data files in the game's Content folder " +
+        "(*.gsc, *.hlsi, *.json, *.mwl, *.resx, *.sbc, *.sbl, *.scf, *.vs, *.vsc, *.xml). " +
+        "The ILCode is useful only if you work on a prepatch or transpiler patch."
 )
 
 with open(fastmcp_config_path, 'wt') as f:
